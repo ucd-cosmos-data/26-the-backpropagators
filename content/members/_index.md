@@ -14,43 +14,76 @@ title: "Members"
 }
 </style>
 
-### Snoopy
+### Shely
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="/26-the-backpropagators/members/snoopy.jpeg"
-       alt="Snoopy"
+  <img src="/26-the-backpropagators/static/members/shely.png"
+       alt="Shely"
        style="width: 150px; height: 150px; object-fit: contain; border-radius: 0%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Snoopy is a lovable beagle and one of the most iconic characters from the Peanuts comic strip, created by Charles M. Schulz. 
+      Shely is from Dublin and is a rising Senior. She attends Emerald High School
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>Loyal companion of Charlie Brown</li>
-      <li>Loves root beer and pizza</li>
-      <li>Sleeps on top of his doghouse, not inside it</li>
+      <li>Fun fact: Shely plays volleyball!</li>
     </ul>
   </div>
 
 </div>
 
-### Woodstock
+### Ema
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="/26-the-backpropagators/members/woodstock.jpeg"
+  <img src="/26-the-backpropagators/static/members/ema.jpeg"
        alt="Woodstock"
        style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Woodstock is ...
+      Ema is from Los Gatos and is a rising Junior at Leigh High School!
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>AAA</li>
-      <li>BBB</li>
-      <li>CCC</li>
+      <li>Fun Fact: She has three citizenships!</li>
+    </ul>
+  </div>
+
+</div>
+
+### Brian
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+
+  <img src="/26-the-backpropagators/static/members/brian.png"
+       alt="Brian"
+       style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
+
+  <div style="flex: 1; text-align: left;">
+    <p style="margin: 0; padding-top: 0.5em;">
+      Brian is from Redwood City and is a rishing Senior. He goes Carlmont High School.
+    </p>
+    <ul style="margin: 0; padding-left: 20px;">
+      <li>Fun Fact: He has a pet cat named Kimi!</li>
+    </ul>
+  </div>
+
+</div>
+
+### Liam
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+
+  <img src="/26-the-backpropagators/26-the-backpropagators/members/liam.png"
+       alt="Liam"
+       style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
+
+  <div style="flex: 1; text-align: left;">
+    <p style="margin: 0; padding-top: 0.5em;">
+      Liam is from Orinda and is a rising Senior. He attends Miramonte High School.
+    </p>
+    <ul style="margin: 0; padding-left: 20px;">
+      <li>Fun fact: He was born in the Cayman Islands!</li>
+
     </ul>
   </div>
 

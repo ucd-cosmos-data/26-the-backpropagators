@@ -17,7 +17,7 @@ params:
     enabled: true
     title: "The Backpropagators"
     subtitle: "<Description>"
-    imageUrl: "/26-the-backpropagators/bonsai.jpeg"
+    imageUrl: "/26-the-backpropagators/ucd.png"    
     imageWidth: 300
     imageHeight: 300
 
@@ -39,6 +39,10 @@ menu:
       name: Photos
       url: /photos/
       weight: 40
+    - identifier: TEST
+      name: TEST
+      url: /test/
+      weight: 50
     - identifier: course-site
       name: Course Website
       url: https://ucd-cosmos-data.github.io/
