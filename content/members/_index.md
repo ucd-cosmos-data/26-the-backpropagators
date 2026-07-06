@@ -18,7 +18,7 @@ title: "Members"
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="/26-the-backpropagators/static/members/shely.png"
+  <img src="/26-the-backpropagators/members/shely.png"
        alt="Shely"
        style="width: 150px; height: 150px; object-fit: contain; border-radius: 0%; object-position: center; flex-shrink: 0;">
 
@@ -37,7 +37,7 @@ title: "Members"
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="/26-the-backpropagators/static/members/ema.jpeg"
+  <img src="/26-the-backpropagators/members/ema.jpeg"
        alt="Woodstock"
        style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
 
@@ -55,7 +55,7 @@ title: "Members"
 ### Brian
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="/26-the-backpropagators/static/members/brian.png"
+  <img src="/26-the-backpropagators/members/brian.png"
        alt="Brian"
        style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
 
@@ -73,7 +73,7 @@ title: "Members"
 ### Liam
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="/26-the-backpropagators/26-the-backpropagators/members/liam.png"
+  <img src="/26-the-backpropagators/members/liam.png"
        alt="Liam"
        style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
 
@@ -83,8 +83,6 @@ title: "Members"
     </p>
     <ul style="margin: 0; padding-left: 20px;">
       <li>Fun fact: He was born in the Cayman Islands!</li>
-
-    </ul>
   </div>
 
 </div>
