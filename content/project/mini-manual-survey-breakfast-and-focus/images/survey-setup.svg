@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  <rect x="80" y="90" width="1040" height="620" rx="28" fill="#ffffff" stroke="#dbeafe" stroke-width="4"/>
+  <rect x="130" y="150" width="360" height="220" rx="20" fill="#2563eb"/>
+  <rect x="540" y="150" width="520" height="220" rx="20" fill="#eff6ff"/>
+  <circle cx="230" cy="250" r="70" fill="#ffffff" opacity="0.95"/>
+  <rect x="170" y="360" width="280" height="36" rx="18" fill="#93c5fd"/>
+  <text x="580" y="210" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#1e3a8a">Survey setup</text>
+  <text x="580" y="260" font-family="Arial, sans-serif" font-size="24" fill="#334155">Add your own photo here to show the</text>
+  <text x="580" y="300" font-family="Arial, sans-serif" font-size="24" fill="#334155">classroom survey setup or materials.</text>
+  <rect x="130" y="440" width="930" height="200" rx="20" fill="#f8fafc" stroke="#e2e8f0" stroke-width="3"/>
+  <rect x="170" y="490" width="220" height="90" rx="16" fill="#22c55e"/>
+  <rect x="430" y="490" width="220" height="90" rx="16" fill="#a78bfa"/>
+  <rect x="690" y="490" width="220" height="90" rx="16" fill="#f59e0b"/>
+  <text x="170" y="470" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#0f172a">Your photos</text>
+</svg>
