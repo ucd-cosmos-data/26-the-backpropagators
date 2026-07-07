@@ -47,6 +47,7 @@ menu:
       name: Course Website
       url: https://ucd-cosmos-data.github.io/
 
+
 markup:
   goldmark:
     renderer:
