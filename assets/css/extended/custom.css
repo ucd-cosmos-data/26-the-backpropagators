@@ -1,0 +1,306 @@
+/* ---------------------------------------------------------------------- */
+/* Backpropagators color system — layered on top of PaperMod's theme vars */
+/* ---------------------------------------------------------------------- */
+
+:root {
+    --accent: #1d4ed8;
+    --accent-2: #0891b2;
+    --accent-3: #0d9488;
+    --accent-soft: #e6f0ff;
+    --gradient: linear-gradient(135deg, #1d4ed8 0%, #0891b2 55%, #0d9488 100%);
+}
+
+:root[data-theme="dark"] {
+    --accent: #60a5fa;
+    --accent-2: #22d3ee;
+    --accent-3: #2dd4bf;
+    --accent-soft: rgba(37, 99, 235, 0.22);
+    --gradient: linear-gradient(135deg, #60a5fa 0%, #22d3ee 55%, #2dd4bf 100%);
+}
+
+::selection {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* thin gradient bar pinned to the very top of every page */
+body::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: var(--gradient);
+}
+
+/* ------------------------------- header -------------------------------- */
+
+.logo a {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--accent);
+}
+
+.menu a span {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover span {
+    color: var(--accent);
+}
+
+.menu .active {
+    text-decoration: none !important;
+    color: var(--accent);
+}
+
+.menu .active::after {
+    content: "";
+    display: block;
+    height: 2px;
+    margin-top: 2px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+}
+
+/* -------------------------------- links --------------------------------- */
+
+.md-content a:not(.anchor):not(.entry-link),
+.post-description a,
+.footer a {
+    color: var(--accent);
+    text-decoration-color: var(--accent-2);
+}
+
+.md-content a:not(.anchor):not(.entry-link):hover {
+    color: var(--accent-2);
+}
+
+.footer a:hover,
+.top-link:hover {
+    color: var(--accent) !important;
+}
+
+.top-link {
+    background: var(--gradient);
+    color: #fff !important;
+}
+
+.top-link svg {
+    stroke: #fff;
+}
+
+/* ------------------------------ headings -------------------------------- */
+
+.md-content h2,
+.page-header h1 {
+    position: relative;
+}
+
+.md-content h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 6px;
+    background: var(--gradient);
+    border-radius: 4px;
+}
+
+/* ------------------------------ blockquote ------------------------------- */
+
+.md-content blockquote {
+    border-inline-start: 0.3rem solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 0.75rem 1rem;
+}
+
+mark {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+/* -------------------------------- tables ---------------------------------- */
+
+.md-content table th {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+/* ----------------------------- post entries -------------------------------- */
+
+.post-entry,
+.first-entry {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-entry::before,
+.first-entry::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient);
+}
+
+.post-entry:hover,
+.post-entry:focus-within,
+.first-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -12px var(--accent);
+}
+
+.entry-hint-parent h2 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* -------------------------------- profile ---------------------------------- */
+
+.profile {
+    position: relative;
+}
+
+.profile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, var(--accent-soft), transparent 60%);
+    z-index: -1;
+}
+
+.profile img {
+    box-sizing: border-box;
+    border: 4px solid var(--accent);
+}
+
+.profile h1 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.button {
+    background: var(--gradient);
+    color: #fff;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -8px var(--accent);
+}
+
+/* -------------------------------- members ----------------------------------- */
+
+.member-block {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.member-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -14px var(--accent);
+    border-color: var(--accent);
+}
+
+.member-block img {
+    box-sizing: border-box;
+    border: 3px solid var(--accent);
+}
+
+/* ------------------------------ project cards -------------------------------- */
+
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none !important;
+    color: var(--content);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px -16px var(--accent);
+    border-color: var(--accent);
+}
+
+.project-card-thumb {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: var(--gradient-card, var(--gradient));
+}
+
+.project-card:nth-of-type(3n+1) .project-card-thumb {
+    --gradient-card: linear-gradient(135deg, #1d4ed8, #0891b2);
+}
+
+.project-card:nth-of-type(3n+2) .project-card-thumb {
+    --gradient-card: linear-gradient(135deg, #0891b2, #0d9488);
+}
+
+.project-card:nth-of-type(3n+3) .project-card-thumb {
+    --gradient-card: linear-gradient(135deg, #0d9488, #1d4ed8);
+}
+
+.project-card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.project-card-body h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+.project-card-body p {
+    margin: 0;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.project-card-cta {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}

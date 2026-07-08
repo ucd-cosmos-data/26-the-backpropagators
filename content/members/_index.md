@@ -20,7 +20,7 @@ title: "Members"
 
   <img src="/26-the-backpropagators/members/shely.png"
        alt="Shely"
-       style="width: 150px; height: 150px; object-fit: contain; border-radius: 0%; object-position: center; flex-shrink: 0;">
+       style="width: 150px; height: 150px; object-fit: contain; border-radius: 25%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">

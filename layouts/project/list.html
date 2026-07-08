@@ -1,0 +1,30 @@
+{{- define "main" }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description | markdownify }}</div>
+  {{- end }}
+</header>
+{{- if .Content }}
+<div class="post-content md-content">{{ .Content }}</div>
+{{- end }}
+
+{{- $pages := .RegularPages }}
+{{- if $pages }}
+<div class="project-card-grid">
+  {{- range $pages }}
+  <a class="project-card" href="{{ .RelPermalink }}">
+    <div class="project-card-thumb">{{ .Params.icon | default "🧪" }}</div>
+    <div class="project-card-body">
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}…{{ end }}</p>
+      <span class="project-card-cta">View project →</span>
+    </div>
+  </a>
+  {{- end }}
+</div>
+{{- else }}
+<p>No projects yet — check back soon!</p>
+{{- end }}
+{{- end }}{{- /* end main */ -}}

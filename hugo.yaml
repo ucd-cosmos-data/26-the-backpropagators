@@ -16,7 +16,7 @@ params:
   profileMode:
     enabled: true
     title: "The Backpropagators"
-    subtitle: "<Description>"
+    subtitle: "UC Davis COSMOS · Cluster 26 — turning data into insight, one project at a time."
     imageUrl: "/26-the-backpropagators/ucd.png"    
     imageWidth: 300
     imageHeight: 300
