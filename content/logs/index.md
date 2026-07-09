@@ -11,3 +11,7 @@ title: "Logs"
 ### **7/7**
 - Added survey exercise to website
 - Added and cleaned raw data from the survey exercise
+
+### **7/8**
+- Obtained data sets describing cholesterol and income by US county
+- cleaned and merged two data sets to create a processed data set
