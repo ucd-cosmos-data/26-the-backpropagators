@@ -1,6 +1,7 @@
 ---
 title: "Mini Manual Survey: Breakfast and Focus"
 date: 2026-07-07
+weight: 10
 icon: "☕"
 description: "A mini survey exploring how breakfast drinks relate to note-taking, lecture review habits, and alertness during class."
 summary: "We asked classmates about their breakfast drink, how many notes they took, whether they planned to review the lecture later, and how alert they felt."

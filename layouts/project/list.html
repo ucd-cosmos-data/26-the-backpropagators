@@ -10,7 +10,7 @@
 <div class="post-content md-content">{{ .Content }}</div>
 {{- end }}
 
-{{- $pages := .RegularPages }}
+{{- $pages := .RegularPages.ByWeight }}
 {{- if $pages }}
 <div class="project-card-grid">
   {{- range $pages }}
