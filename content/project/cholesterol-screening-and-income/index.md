@@ -29,24 +29,21 @@ Across the 58 counties, estimated cholesterol-screening prevalence ranges from 8
 
 In Figure [1](#cholesterol-income) counties with higher per capita income generally have higher estimated cholesterol-screening prevalence. The fitted trend line summarizes this positive relationship, but the plot does not establish that income causes greater screening.
 
-<div id="cholesterol-income">
-<iframe src="/26-the-backpropagators/figures/cholesterol-income-scatter.html" title="Cholesterol screening prevalence versus per capita income" style="width: 100%; height: 560px; border: 0;" loading="lazy"></iframe>
-</div>
-
-**Fig 1. Cholesterol screening prevalence vs. per capita income**
+<figure id="cholesterol-income" style="margin: 1.5rem 0;">
+  <iframe src="/26-the-backpropagators/figures/cholesterol-income-scatter.html" title="Cholesterol screening prevalence versus per capita income" style="width: 100%; height: 560px; border: 0; display: block;" loading="lazy"></iframe>
+  <figcaption style="text-align: center;"><strong>Fig 1.</strong> Cholesterol screening prevalence vs. per capita income</figcaption>
+</figure>
 
 Figure [2](#cholesterol-choropleth) shows how estimated cholesterol-screening prevalence varies geographically. Although the overall range is fairly narrow, darker counties have higher screening estimates and lighter counties have lower estimates.
 
-<div id="cholesterol-choropleth">
-<iframe src="/26-the-backpropagators/figures/cholesterol-screening-choropleth.html" title="Cholesterol screening prevalence by California county" style="width: 100%; height: 600px; border: 0;" loading="lazy"></iframe>
-</div>
-
-**Fig 2. Cholesterol screening prevalence by county**
+<figure id="cholesterol-choropleth" style="margin: 1.5rem 0;">
+  <iframe src="/26-the-backpropagators/figures/cholesterol-screening-choropleth.html" title="Cholesterol screening prevalence by California county" style="width: 100%; height: 600px; border: 0; display: block;" loading="lazy"></iframe>
+  <figcaption style="text-align: center;"><strong>Fig 2.</strong> Cholesterol screening prevalence by county</figcaption>
+</figure>
 
 Figure [3](#income-choropleth) shows a wider geographic contrast in per capita income. Comparing Figures 2 and 3 helps illustrate the positive county-level relationship seen in Figure 1.
 
-<div id="income-choropleth">
-<iframe src="/26-the-backpropagators/figures/per-capita-income-choropleth.html" title="Per capita income by California county" style="width: 100%; height: 600px; border: 0;" loading="lazy"></iframe>
-</div>
-
-**Fig 3. Per capita income by county**
+<figure id="income-choropleth" style="margin: 1.5rem 0;">
+  <iframe src="/26-the-backpropagators/figures/per-capita-income-choropleth.html" title="Per capita income by California county" style="width: 100%; height: 600px; border: 0; display: block;" loading="lazy"></iframe>
+  <figcaption style="text-align: center;"><strong>Fig 3.</strong> Per capita income by county</figcaption>
+</figure>
