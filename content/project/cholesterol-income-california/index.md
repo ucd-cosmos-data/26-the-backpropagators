@@ -27,9 +27,9 @@ This mini project looks at county-level differences in cholesterol screening and
 
 <figure style="margin: 1.5rem 0; padding: 1rem; background: var(--entry); border: 1px solid var(--border); border-radius: var(--radius);">
   <iframe src="figures/income-cholesterol-scatter.html" title="Cholesterol screening versus per capita income by California county" loading="lazy" style="width: 100%; height: 540px; border: 0; display: block;"></iframe>
-  <figcaption style="margin-top: 0.75rem; text-align: center; color: var(--secondary); font-weight: 500;">Figure 3: Each point represents a California county. The trend line shows a positive relationship between per capita income and cholesterol screening, with a correlation of 0.785 in this dataset.</figcaption>
+  <figcaption style="margin-top: 0.75rem; text-align: center; color: var(--secondary); font-weight: 500;">Figure 3: Each point represents a California county. The trend line shows a positive relationship between per capita income and cholesterol screening, with a correlation of 0.785.</figcaption>
 </figure>
 
 ## Quick takeaway
 
-Counties with higher per capita income generally also show higher cholesterol screening percentages. This does not prove income causes screening differences, but it suggests income may be connected to access, awareness, or other county-level factors worth exploring further.
+Counties with higher per capita income generally also have higher cholesterol screening percentages. This does not prove income causes screening differences, but it suggests income may be connected to access, awareness, or other county-level factors worth exploring further.
