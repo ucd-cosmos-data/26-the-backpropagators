@@ -4,7 +4,7 @@ title: "The Backpropagators"
 theme: ["PaperMod"]
 
 params:
-  defaultTheme: auto
+  defaultTheme: dark
   disableThemeToggle: true
   ShowToc: false
   assets:
@@ -17,9 +17,14 @@ params:
     enabled: true
     title: "The Backpropagators"
     subtitle: "UC Davis COSMOS · Cluster 11 — turning data into insight, one project at a time."
-    imageUrl: "/26-the-backpropagators/ucd.png"    
+    imageUrl: "/26-the-backpropagators/ucd.png"
     imageWidth: 300
     imageHeight: 300
+    buttons:
+      - name: Explore Our Projects
+        url: /project/
+      - name: Meet the Team
+        url: /members/
 
 menu:
   main:
