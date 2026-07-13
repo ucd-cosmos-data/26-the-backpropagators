@@ -25,7 +25,7 @@ County names and five-digit county FIPS codes were cleaned and checked before th
 
 ## EDA
 
-Across the 58 counties, estimated cholesterol-screening prevalence ranges from 81.1% in Imperial County to 86.6% in Marin County. Per capita income ranges from $38,243 in Trinity County to $180,575 in Marin County. The county-level Pearson correlation between income and screening prevalence is 0.785, indicating a strong positive association in this dataset.
+Across the 58 counties, estimated cholesterol-screening prevalence ranges from 81.1% in Imperial County to 86.6% in Marin County. Per capita income ranges from &#36;38,243 in Trinity County to &#36;180,575 in Marin County. The county-level Pearson correlation between income and screening prevalence is 0.785, indicating a strong positive association in this dataset.
 
 In Figure [1](#cholesterol-income) counties with higher per capita income generally have higher estimated cholesterol-screening prevalence. The fitted trend line summarizes this positive relationship, but the plot does not establish that income causes greater screening.
 
