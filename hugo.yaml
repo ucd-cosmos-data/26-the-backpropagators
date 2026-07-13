@@ -12,7 +12,7 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/ucd-cosmos-data/26-the-backpropagators"
-  math: True
+  math: False # set to `true` in a page's own front matter if it needs LaTeX rendering
   profileMode:
     enabled: true
     title: "The Backpropagators"
