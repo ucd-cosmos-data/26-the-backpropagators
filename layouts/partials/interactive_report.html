@@ -1,0 +1,162 @@
+<dialog class="report-lightbox" aria-label="Expanded report figure">
+  <button class="report-lightbox-close" type="button" aria-label="Close expanded figure">×</button>
+  <img alt="">
+  <p class="report-lightbox-caption"></p>
+</dialog>
+
+<script>
+(function () {
+  var report = document.querySelector('.interactive-report');
+  if (!report) return;
+
+  report.querySelectorAll('table').forEach(function (table) {
+    if (!table.parentElement.classList.contains('report-table-scroll')) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'report-table-scroll';
+      wrapper.setAttribute('role', 'region');
+      wrapper.setAttribute('aria-label', 'Scrollable and sortable results table');
+      wrapper.tabIndex = 0;
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+
+    var body = table.tBodies[0];
+    if (!body) return;
+
+    table.querySelectorAll('thead th').forEach(function (heading, columnIndex) {
+      heading.tabIndex = 0;
+      heading.dataset.sortable = 'true';
+      heading.setAttribute('aria-sort', 'none');
+      heading.title = 'Sort this table by ' + heading.textContent.trim();
+
+      function sortColumn() {
+        var ascending = heading.getAttribute('aria-sort') !== 'ascending';
+        table.querySelectorAll('thead th').forEach(function (item) {
+          item.setAttribute('aria-sort', 'none');
+        });
+        heading.setAttribute('aria-sort', ascending ? 'ascending' : 'descending');
+
+        var rows = Array.from(body.rows);
+        rows.sort(function (a, b) {
+          var aText = a.cells[columnIndex].textContent.trim();
+          var bText = b.cells[columnIndex].textContent.trim();
+          var aNumber = Number(aText.replace(/[^0-9.\-]/g, ''));
+          var bNumber = Number(bText.replace(/[^0-9.\-]/g, ''));
+          var bothNumeric = aText !== '' && bText !== '' && !Number.isNaN(aNumber) && !Number.isNaN(bNumber);
+          var comparison = bothNumeric
+            ? aNumber - bNumber
+            : aText.localeCompare(bText, undefined, { numeric: true });
+          return ascending ? comparison : -comparison;
+        });
+        rows.forEach(function (row) { body.appendChild(row); });
+      }
+
+      heading.addEventListener('click', sortColumn);
+      heading.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          sortColumn();
+        }
+      });
+    });
+  });
+
+  report.querySelectorAll('.report-figure-gallery').forEach(function (gallery) {
+    var tabs = Array.from(gallery.querySelectorAll('[data-gallery-index]'));
+    var panels = Array.from(gallery.querySelectorAll('[data-gallery-panel]'));
+    var previous = gallery.querySelector('[data-gallery-previous]');
+    var next = gallery.querySelector('[data-gallery-next]');
+    var status = gallery.querySelector('.report-gallery-status');
+    var stage = gallery.querySelector('.report-gallery-stage');
+    var activeIndex = 0;
+    var touchStartX = null;
+
+    function showFigure(index, focusTab) {
+      activeIndex = (index + panels.length) % panels.length;
+      tabs.forEach(function (tab, tabIndex) {
+        var active = tabIndex === activeIndex;
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        tab.tabIndex = active ? 0 : -1;
+        if (active && focusTab) tab.focus();
+      });
+      panels.forEach(function (panel, panelIndex) {
+        var active = panelIndex === activeIndex;
+        panel.hidden = !active;
+        panel.classList.toggle('is-active', active);
+      });
+      status.textContent = 'Figure ' + (activeIndex + 1) + ' of ' + panels.length;
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        showFigure(Number(tab.dataset.galleryIndex), false);
+      });
+    });
+    previous.addEventListener('click', function () { showFigure(activeIndex - 1, false); });
+    next.addEventListener('click', function () { showFigure(activeIndex + 1, false); });
+
+    gallery.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showFigure(activeIndex - 1, true);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showFigure(activeIndex + 1, true);
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        showFigure(0, true);
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        showFigure(panels.length - 1, true);
+      }
+    });
+
+    stage.addEventListener('touchstart', function (event) {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    stage.addEventListener('touchend', function (event) {
+      if (touchStartX === null) return;
+      var distance = event.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(distance) < 45) return;
+      showFigure(activeIndex + (distance < 0 ? 1 : -1), false);
+    }, { passive: true });
+
+    showFigure(0, false);
+  });
+
+  var dialog = document.querySelector('.report-lightbox');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  var dialogImage = dialog.querySelector('img');
+  var dialogCaption = dialog.querySelector('.report-lightbox-caption');
+  var closeButton = dialog.querySelector('.report-lightbox-close');
+
+  report.querySelectorAll('figure img').forEach(function (figureImage) {
+    figureImage.tabIndex = 0;
+    figureImage.setAttribute('role', 'button');
+    figureImage.setAttribute('aria-label', 'Enlarge figure: ' + figureImage.alt);
+    figureImage.title = 'Click to enlarge';
+
+    function openFigure() {
+      dialogImage.src = figureImage.src;
+      dialogImage.alt = figureImage.alt;
+      var caption = figureImage.closest('figure').querySelector('figcaption');
+      dialogCaption.textContent = caption ? caption.textContent.trim() : figureImage.alt;
+      dialog.showModal();
+    }
+
+    figureImage.addEventListener('click', openFigure);
+    figureImage.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openFigure();
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+})();
+</script>

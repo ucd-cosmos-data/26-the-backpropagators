@@ -21,11 +21,15 @@
   {{- end }}
 
   {{- if .Content }}
-  <div class="post-content md-content">
+  <div class="post-content md-content{{ if .Params.interactiveReport }} interactive-report{{ end }}">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
   </div>
+  {{- end }}
+
+  {{- if .Params.interactiveReport }}
+  {{- partial "interactive_report.html" . }}
   {{- end }}
 
   {{- partial "extend_post_content.html" . }}
