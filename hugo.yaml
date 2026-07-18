@@ -63,4 +63,7 @@ markup:
           block:
           - - $$
             - $$
+          inline:
+          - - \(
+            - \)
         enable: true

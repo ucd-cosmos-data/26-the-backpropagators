@@ -1,0 +1,12 @@
+{{- $current := . -}}
+{{- with site.GetPage "project" }}
+<nav class="project-tabs" aria-label="Projects">
+  <a class="project-tab{{ if $current.IsSection }} is-active{{ end }}" href="{{ .RelPermalink }}">All projects</a>
+  {{- range .RegularPages.ByWeight }}
+  <a class="project-tab{{ if eq $current.RelPermalink .RelPermalink }} is-active{{ end }}" href="{{ .RelPermalink }}">
+    <span aria-hidden="true">{{ .Params.icon | default "🧪" }}</span>
+    {{ .Params.tabTitle | default .Title }}
+  </a>
+  {{- end }}
+</nav>
+{{- end }}

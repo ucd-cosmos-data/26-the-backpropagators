@@ -6,6 +6,7 @@
   <div class="post-description">{{ .Description | markdownify }}</div>
   {{- end }}
 </header>
+{{- partial "project_tabs.html" . }}
 {{- if .Content }}
 <div class="post-content md-content">{{ .Content }}</div>
 {{- end }}

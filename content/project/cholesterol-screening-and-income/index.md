@@ -1,7 +1,9 @@
 ---
 title: "Mini Project 1: Cholesterol Screening and Income"
 date: 2026-07-10
+weight: 15
 icon: "❤️"
+tabTitle: "Cholesterol & Income"
 description: "An exploration of cholesterol screening and per capita income across California counties."
 summary: "We compare county-level cholesterol-screening prevalence with per capita income across all 58 California counties."
 ShowToc: true
