@@ -43,3 +43,11 @@ title: "Logs"
 - Learned the methods behind neural networks
 - Understood numerical (iterative) methods
 
+### **7/22**
+- Expanded our understanding of neural networks through autoencoders, generative models, and reinforcement learning
+- Learned the foundations of statistical inference, including sampling distributions, confidence intervals, hypothesis testing, and bootstrapping
+
+### **7/23**
+- Applied Bayes' rule and learned the Bayesian workflow of priors, likelihoods, and posterior distributions
+- Examined bias in observational data and the potential outcomes framework for causal inference
+- Discussed ethics in data science, including reproducibility, informed consent, privacy, and algorithmic fairness
