@@ -44,6 +44,10 @@ menu:
       name: Photos
       url: /photos/
       weight: 40
+    - identifier: Try
+      name: Try
+      url: /try/
+      weight: 45
     - identifier: TEST
       name: TEST
       url: /test/
