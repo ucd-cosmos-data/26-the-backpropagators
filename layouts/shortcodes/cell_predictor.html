@@ -1,0 +1,118 @@
+<section class="predictor-intro">
+  <span class="eyebrow">Interactive model demo</span>
+  <h2>Try our model</h2>
+  <p>
+    Enter a cell number from the PBMC3k dataset. The classifier will look at that
+    cell’s gene-expression pattern and choose the most likely cell type.
+  </p>
+</section>
+
+<section id="cell-predictor" class="cell-predictor" aria-labelledby="predictor-title">
+  <div class="predictor-console">
+    <div class="console-header">
+      <div>
+        <span class="console-kicker">PBMC3k lookup</span>
+        <h2 id="predictor-title">Choose a cell</h2>
+      </div>
+      <span id="model-status" class="model-status" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Loading model results…
+      </span>
+    </div>
+
+    <form id="cell-form" class="cell-form" novalidate>
+      <label for="cell-query">Cell number or barcode</label>
+      <div class="input-row">
+        <input
+          id="cell-query"
+          name="cell"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          placeholder="Try 42"
+          aria-describedby="cell-help cell-error"
+          disabled
+        >
+        <button id="predict-button" class="predict-button" type="submit" disabled>
+          Predict cell type
+        </button>
+      </div>
+      <div class="form-footer">
+        <span id="cell-help">Use a number from 1 to 2,638, or a complete cell barcode.</span>
+        <button id="random-cell" class="text-button" type="button" disabled>Pick a random cell</button>
+      </div>
+      <p id="cell-error" class="cell-error" role="alert" hidden></p>
+    </form>
+  </div>
+
+  <article id="prediction-result" class="prediction-result" aria-live="polite" hidden>
+    <div class="result-summary">
+      <div>
+        <span class="result-label">XGBoost predicts</span>
+        <h2 id="predicted-type">—</h2>
+        <p id="result-verdict" class="result-verdict"></p>
+      </div>
+      <div class="confidence-dial" aria-label="Prediction confidence">
+        <span id="confidence-value">—</span>
+        <small>confidence</small>
+      </div>
+    </div>
+
+    <dl class="cell-facts">
+      <div>
+        <dt>Cell number</dt>
+        <dd id="result-number">—</dd>
+      </div>
+      <div>
+        <dt>Barcode</dt>
+        <dd id="result-barcode">—</dd>
+      </div>
+      <div>
+        <dt>Data split</dt>
+        <dd id="result-split">—</dd>
+      </div>
+      <div>
+        <dt>Reviewed label</dt>
+        <dd id="result-reviewed">—</dd>
+      </div>
+    </dl>
+
+    <div class="probability-section">
+      <div class="section-heading">
+        <h3>Possible cell types</h3>
+        <span>Model probability</span>
+      </div>
+      <div id="probability-bars" class="probability-bars"></div>
+    </div>
+
+    <p id="split-note" class="split-note"></p>
+  </article>
+</section>
+
+<section class="how-it-works">
+  <span class="eyebrow">What's going on?</span>
+  <h2>XGBoost's process</h2>
+  <div class="explanation-grid">
+    <article>
+      <span>01</span>
+      <h3>Find the cell</h3>
+      <p>The page finds the chosen cell’s saved gene-expression record.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>Compare patterns</h3>
+      <p>XGBoost combines many decision trees, which are trained to recognize expression patterns.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Show the prediction</h3>
+      <p>The highest probability becomes the predicted type, while the other possibilities are also shown.</p>
+    </article>
+  </div>
+  <p class="method-note">
+    This demo looks up predictions calculated by the trained XGBoost pipeline for
+    cells already in PBMC3k. It does not accept new sequencing data. The reviewed
+    labels came from expression-based clustering and marker review, so a high
+    probability is essentially the model's confidence, but not truly biological certainty.
+  </p>
+</section>
