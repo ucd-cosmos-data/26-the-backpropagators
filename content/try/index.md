@@ -1,6 +1,6 @@
 ---
 title: "Try"
-description: "Test our model: ask our XGBoost classifier to identify a cell from the PBMC3k dataset"
+description: "Explore saved XGBoost classifications for cells from PBMC3k and PBMC4k"
 cellPredictor: true
 hideMeta: true
 disableAnchoredHeadings: true

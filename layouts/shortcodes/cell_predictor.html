@@ -1,17 +1,21 @@
 <section class="predictor-intro">
   <span class="eyebrow">Interactive model demo</span>
   <h2>Try our model</h2>
-  <p>
-    Enter a cell number from the PBMC3k dataset. The classifier will look at that
-    cell’s gene-expression pattern and choose the most likely cell type.
+  <p id="predictor-description">
+    Choose PBMC3k or PBMC4k, then enter a cell number or barcode to inspect its
+    saved classification result.
   </p>
 </section>
 
 <section id="cell-predictor" class="cell-predictor" aria-labelledby="predictor-title">
+  <div class="dataset-switch" role="group" aria-label="Choose a dataset">
+    <button type="button" data-dataset="pbmc3k" class="is-active" aria-pressed="true">PBMC3k</button>
+    <button type="button" data-dataset="pbmc4k" aria-pressed="false">PBMC4k</button>
+  </div>
   <div class="predictor-console">
     <div class="console-header">
       <div>
-        <span class="console-kicker">PBMC3k lookup</span>
+        <span id="console-kicker" class="console-kicker">PBMC3k lookup</span>
         <h2 id="predictor-title">Choose a cell</h2>
       </div>
       <span id="model-status" class="model-status" role="status">
@@ -48,11 +52,11 @@
   <article id="prediction-result" class="prediction-result" aria-live="polite" hidden>
     <div class="result-summary">
       <div>
-        <span class="result-label">XGBoost predicts</span>
+        <span id="result-label" class="result-label">XGBoost predicts</span>
         <h2 id="predicted-type">—</h2>
         <p id="result-verdict" class="result-verdict"></p>
       </div>
-      <div class="confidence-dial" aria-label="Prediction confidence">
+      <div id="confidence-dial" class="confidence-dial" aria-label="Prediction confidence">
         <span id="confidence-value">—</span>
         <small>confidence</small>
       </div>
@@ -77,7 +81,7 @@
       </div>
     </dl>
 
-    <div class="probability-section">
+    <div id="probability-section" class="probability-section">
       <div class="section-heading">
         <h3>Possible cell types</h3>
         <span>Model probability</span>
@@ -109,10 +113,8 @@
       <p>The highest probability becomes the predicted type, while the other possibilities are also shown.</p>
     </article>
   </div>
-  <p class="method-note">
-    This demo looks up predictions calculated by the trained XGBoost pipeline for
-    cells already in PBMC3k. It does not accept new sequencing data. The reviewed
-    labels came from expression-based clustering and marker review, so a high
-    probability is essentially the model's confidence, but not truly biological certainty.
+  <p id="method-note" class="method-note">
+    This demo looks up saved results for cells already in PBMC3k or PBMC4k. It
+    does not accept new sequencing data. Model confidence is not biological certainty.
   </p>
 </section>
