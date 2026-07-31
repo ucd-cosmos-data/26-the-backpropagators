@@ -40,6 +40,10 @@ menu:
       name: Logs
       url: /logs/
       weight: 30
+    - identifier: Presentation
+      name: Presentation
+      url: /presentation/
+      weight: 40
     - identifier: Try
       name: Try
       url: /try/

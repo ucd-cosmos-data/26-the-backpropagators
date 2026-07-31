@@ -33,6 +33,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Checkout presentation
+        uses: actions/checkout@v6
+        with:
+          repository: ucd-cosmos-data/26-the-backpropagators-presentation
+          ref: main
+          path: .presentation-source
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
@@ -49,10 +56,11 @@ jobs:
           cache: false
 
       - name: Install Node.js
-        if: hashFiles('package-lock.json') != ''
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: .presentation-source/package-lock.json
 
       - name: Install Dart Sass
         run: |
@@ -96,12 +104,15 @@ jobs:
             git submodule update --init --recursive
           fi
 
-      - name: Install Node.js dependencies
-        run: |
-          if [[ -f package-lock.json ]]; then
-            echo "Installing Node.js dependencies..."
-            npm ci
-          fi
+      - name: Install presentation dependencies
+        working-directory: .presentation-source
+        run: npm ci
+
+      - name: Build presentation
+        working-directory: .presentation-source
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}/presentation
+        run: npm run build
 
       - name: Cache restore
         id: cache-restore
@@ -119,6 +130,11 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+
+      - name: Add presentation to site
+        run: |
+          mkdir -p public/presentation
+          cp -R .presentation-source/out/. public/presentation/
 
       - name: Cache save
         uses: actions/cache/save@v5
